@@ -17,6 +17,8 @@
 .transferInput {
     border-radius: 6px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     gap: 10px;
 
@@ -112,6 +114,7 @@
     border-radius: inherit;
     font-size: var(--font-size-m);
     cursor: pointer;
+
 
     font-weight: bold;
     transition: background-color 300ms linear;

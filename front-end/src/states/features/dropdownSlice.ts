@@ -50,6 +50,20 @@ export const dropdownSlice = createSlice({
             }
         },
 
+        removeSelectedLocation:(state, action:{payload: {id: string, location: string}}) => {
+          return {
+              ...state,
+              dropdownInputs: [...state.dropdownInputs.map(i => {
+                  return {
+                      ...i,
+                      value: action.payload.id === i.id ? undefined : i.value
+                  }
+              })],
+              selectedLocations: [...state.selectedLocations.filter(location => location === action.payload.location)]
+
+          }
+        },
+
         addDropdownInput: (state, action:{payload: DropdownInput}) => {
             return {
                 ...state,
@@ -69,5 +83,5 @@ export const dropdownSlice = createSlice({
 })
 
 
-export const {setOpenForInput, setSelectedLocations, addDropdownInput, removeDropdownInput} = dropdownSlice.actions;
+export const {setOpenForInput,removeSelectedLocation, setSelectedLocations, addDropdownInput, removeDropdownInput} = dropdownSlice.actions;
 export default dropdownSlice.reducer
