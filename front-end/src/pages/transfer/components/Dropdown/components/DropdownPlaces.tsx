@@ -1,8 +1,8 @@
-import places from "../../../../assets/placesToVisit.ts";
-import dropdownStyles from './../styles/dropdown.module.css'
+import places from "../../../../../assets/placesToVisit.ts";
+import dropdownStyles from '../../styles/dropdown.module.css'
 import {v4} from "uuid";
-import {useAppDispatch, useAppSelector} from "../../../../states/hooks.ts";
-import {setSelectedLocations} from "../../../../states/features/dropdownSlice.ts";
+import {useAppDispatch, useAppSelector} from "../../../../../states/hooks.ts";
+import {setSelectedLocations} from "../../../../../states/features/dropdownSlice.ts";
 
 export default function DropdownPlaces() {
     const {selectedLocations} = useAppSelector(s => s.dropdown)

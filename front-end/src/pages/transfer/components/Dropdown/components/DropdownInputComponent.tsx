@@ -1,9 +1,9 @@
-import dropdownStyles from "../styles/dropdown.module.css";
-import CloseSVG from "../../../../assets/icons/close.svg";
-import {DropdownInput} from "../../../../types/transfers/dropdown.ts";
+import dropdownStyles from "../../styles/dropdown.module.css";
+import CloseSVG from "../../../../../assets/icons/close.svg";
+import {DropdownInput} from "../../../../../types/transfers/dropdown.ts";
 import DropdownPlaces from "./DropdownPlaces.tsx";
-import {useAppDispatch, useAppSelector} from "../../../../states/hooks.ts";
-import {removeDropdownInput, setOpenForInput} from "../../../../states/features/dropdownSlice.ts";
+import {useAppDispatch, useAppSelector} from "../../../../../states/hooks.ts";
+import {removeDropdownInput, setOpenForInput} from "../../../../../states/features/dropdownSlice.ts";
 
 export default function DropdownInputComponent({lenOfTransfers, eachInput}: {
     lenOfTransfers: number,
