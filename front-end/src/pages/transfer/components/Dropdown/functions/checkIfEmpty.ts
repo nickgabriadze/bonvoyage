@@ -4,10 +4,10 @@ export function checkIfEmpty(inputs: DropdownInput[]){
 
     for (const dropdownInput of inputs){
         if (dropdownInput.value === undefined){
-            return false;
+            return true;
         }
     }
-    return true;
+    return false;
 
 }
 export default checkIfEmpty

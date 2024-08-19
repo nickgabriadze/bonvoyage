@@ -15,7 +15,7 @@ export default function Dropdown() {
         <button className={dropdownStyles['addDestination']}
                 onClick={() => !checkIfEmpty(dropdownInputs) && dropdownDispatch(addDropdownInput({
                     id: v4(),
-                    value: ''
+                    value: undefined
                 }))}>
             Add
             Destination
