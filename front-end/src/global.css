@@ -5,6 +5,9 @@
   /* colors */
   --color-main-black: #000000;
   --color-main-deep-sea-navy: #002F4E;
+  --color-main-deep-sea-navy-light: rgba(0, 47, 78, 0.8);
+  --color-main-deep-sea-navy-lighter: rgba(0, 47, 78, 0.1);
+  --color-main-black-light: rgba(0, 0, 0, 0.1);
 
   /* font sizes */
   --font-size-xs: 4px;
