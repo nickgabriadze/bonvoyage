@@ -37,7 +37,7 @@
 
     }
 
-    .input-wrapper {
+    .inputWrapper {
         position: relative;
         width: 100%;
         border-radius: inherit;
@@ -77,8 +77,6 @@
 
         .placesDropdown {
             width: 100%;
-            overflow-y: scroll;
-            height: 300px;
             position: absolute;
             top: 50px;
             z-index: 999;

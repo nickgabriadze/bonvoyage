@@ -54,7 +54,7 @@ export default function DropdownInputComponent({index, totalLength, currentInput
         </div>
         <div
 
-            className={dropdownStyles['input-wrapper']}>
+            className={dropdownStyles['inputWrapper']}>
             <input value={openForInput === currentInput.id ? searchingFor : currentInput.value}
                    ref={inputRef}
                    style={openForInput === currentInput.id ? {
