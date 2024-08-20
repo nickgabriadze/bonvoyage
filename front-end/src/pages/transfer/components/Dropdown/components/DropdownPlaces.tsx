@@ -1,24 +1,28 @@
 import dropdownStyles from '../../styles/dropdown.module.css'
 import {v4} from "uuid";
-import {useAppDispatch} from "../../../../../states/hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../../../../states/hooks.ts";
 import {setSelectedLocations} from "../../../../../states/features/dropdownSlice.ts";
-import React from "react";
+import places from "../../../../../assets/placesToVisit.ts";
 
-export function DropdownPlaces({locations}: { locations: string[] }) {
+export function DropdownPlaces({searchingFor}: { searchingFor: string }) {
 
     const dispatch = useAppDispatch()
+    const {selectedLocations} = useAppSelector(s => s.dropdown)
+    const locations = places.filter((place: string) => !selectedLocations.includes(place))
 
+    const filteredLocations = locations.filter(loc => loc.toLowerCase().includes(searchingFor.toLowerCase()))
+    console.log(selectedLocations)
     return <div className={dropdownStyles['placesDropdown']}
-                style={locations.length < 10 ? {'height': 'fit-content', overflowY: 'hidden'} : {
+                style={filteredLocations.length < 10 ? {'height': 'fit-content', overflowY: 'hidden'} : {
                     'height': '300px',
                     overflowY: 'scroll'
                 }}
     >
-        {locations.map((place) => <div key={v4()}
-                                       onClick={() => dispatch(setSelectedLocations({location: place}))}
-        >{place}</div>)}
+        {filteredLocations.map((place) => <button key={v4()}
+                                                  onClick={() => dispatch(setSelectedLocations({location: place}))}
+        >{place}</button>)}
     </div>
 
 }
 
-export default React.forwardRef(DropdownPlaces)
+export default DropdownPlaces

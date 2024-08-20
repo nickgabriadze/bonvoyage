@@ -1,20 +1,14 @@
 import dropdownStyles from "../../styles/dropdown.module.css";
-import CloseSVG from "../../../../../assets/icons/close.svg";
-import ClearInputSVG from "../../../../../assets/icons/remove.svg";
-import StartingLocationSVG from './../../../../../assets/icons/current-location.svg'
-import DestionationSVG from './../../../../../assets/icons/destination.svg'
-import MultipleStopSVG from './../../../../../assets/icons/multiple-stop.svg'
 import {DropdownInput} from "../../../../../types/transfers/dropdown.ts";
 import DropdownPlaces from "./DropdownPlaces.tsx";
 import {useAppDispatch, useAppSelector} from "../../../../../states/hooks.ts";
 import {
-    removeDropdownInput,
-    removeSelectedLocation,
     setOpenForInput
 } from "../../../../../states/features/dropdownSlice.ts";
-import places from "../../../../../assets/placesToVisit.ts";
 import {useEffect, useRef, useState} from "react";
-import getLocationIcon from "../utils/getLocationIcon.ts";
+import RemoveTransferInput from "./RemoveTransferInput.tsx";
+import RemoveTransferLocation from "./RemoveTransferLocation.tsx";
+import TransferTypeIndicator from "./TransferTypeIndicator.tsx";
 
 export default function DropdownInputComponent({index, totalLength, currentInput}: {
     index: number,
@@ -25,18 +19,11 @@ export default function DropdownInputComponent({index, totalLength, currentInput
 
     const dispatch = useAppDispatch()
 
-    const {selectedLocations, openForInput} = useAppSelector(s => s.dropdown)
-    const locations = places.filter((place: string) => !selectedLocations.includes(place))
-    const [searchingFor, setSearchingFor] = useState<string>('')
+    const {openForInput} = useAppSelector(s => s.dropdown)
+    const [searchingFor, setSearchingFor] = useState<string>(currentInput.value === undefined ? '' : String(currentInput.value))
     const inputRef = useRef<HTMLInputElement>(null);
     const dropdownRef = useRef<HTMLDivElement>(null)
     const isLast = totalLength - 1 === index
-
-    const inputIndicator = {
-        'start': StartingLocationSVG,
-        'stop': MultipleStopSVG,
-        'destination': DestionationSVG
-    }
 
     /* this piece of code is important, because input loses focus when the dropdown opens */
     useEffect(() => {
@@ -45,17 +32,10 @@ export default function DropdownInputComponent({index, totalLength, currentInput
         }
     }, [openForInput]);
 
-
     return <div key={currentInput.id} className={dropdownStyles['transferInput']} ref={dropdownRef}>
-        <div className={dropdownStyles['input-type-indicator']}>
-            <img src={getLocationIcon(index, inputIndicator, isLast)}
-                 alt={'Location icon'}
-                 width={24}
-            />
 
-        </div>
+        <TransferTypeIndicator index={index} isLast={isLast}/>
         <div
-
             className={dropdownStyles['inputWrapper']}>
             <input value={openForInput === currentInput.id ? searchingFor : currentInput.value}
                    ref={inputRef}
@@ -69,23 +49,11 @@ export default function DropdownInputComponent({index, totalLength, currentInput
                        setSearchingFor(e.target.value)
                    }}
                    placeholder={currentInput.start ? 'Where do you want to start from?' : 'Where do you want to go?'}/>
-            {openForInput === currentInput.id && <DropdownPlaces
-                locations={locations.filter(loc => loc.toLowerCase().includes(searchingFor.toLowerCase()))}/>}
+            {openForInput === currentInput.id && <DropdownPlaces searchingFor={searchingFor}/>}
         </div>
 
-        {currentInput.value && openForInput === currentInput.id && <button
-            onClick={() => dispatch(removeSelectedLocation({
-                id: currentInput.id,
-                location: String(currentInput.value)
-            }))}
-            className={dropdownStyles['removeInput']}><img src={ClearInputSVG} width={24} alt={"Clear input"}/>
-        </button>}
-
-        {isLast && totalLength > 2 &&
-            <button onClick={() => dispatch(removeDropdownInput(currentInput))}
-                    className={dropdownStyles['removeInput']}><img src={CloseSVG} width={24} alt={'Close icon'}/>
-            </button>}
-
+        <RemoveTransferLocation currentInput={currentInput}/>
+        <RemoveTransferInput isLast={isLast} totalLength={totalLength} currentInput={currentInput}/>
 
     </div>
 
