@@ -9,6 +9,7 @@ import {useEffect, useRef, useState} from "react";
 import RemoveTransferInput from "./RemoveTransferInput.tsx";
 import RemoveTransferLocation from "./RemoveTransferLocation.tsx";
 import TransferTypeIndicator from "./TransferTypeIndicator.tsx";
+import useClickOutside from "../utils/useClickOutside.ts";
 
 export default function DropdownInputComponent({index, totalLength, currentInput}: {
     index: number,
@@ -22,8 +23,10 @@ export default function DropdownInputComponent({index, totalLength, currentInput
     const {openForInput} = useAppSelector(s => s.dropdown)
     const [searchingFor, setSearchingFor] = useState<string>(currentInput.value === undefined ? '' : String(currentInput.value))
     const inputRef = useRef<HTMLInputElement>(null);
-    const dropdownRef = useRef<HTMLDivElement>(null)
     const isLast = totalLength - 1 === index
+
+
+    const clickOutsideRef = useClickOutside(currentInput.id, () =>  dispatch(setOpenForInput(undefined)))
 
     /* this piece of code is important, because input loses focus when the dropdown opens */
     useEffect(() => {
@@ -32,11 +35,17 @@ export default function DropdownInputComponent({index, totalLength, currentInput
         }
     }, [openForInput]);
 
-    return <div key={currentInput.id} className={dropdownStyles['transferInput']} ref={dropdownRef}>
+
+
+    return <div key={currentInput.id} className={dropdownStyles['transferInput']}
+                ref={clickOutsideRef}
+
+    >
 
         <TransferTypeIndicator index={index} isLast={isLast}/>
         <div
-            className={dropdownStyles['inputWrapper']}>
+
+                            className={dropdownStyles['inputWrapper']}>
             <input value={openForInput === currentInput.id ? searchingFor : currentInput.value}
                    ref={inputRef}
                    style={openForInput === currentInput.id ? {
@@ -49,7 +58,8 @@ export default function DropdownInputComponent({index, totalLength, currentInput
                        setSearchingFor(e.target.value)
                    }}
                    placeholder={currentInput.start ? 'Where do you want to start from?' : 'Where do you want to go?'}/>
-            {openForInput === currentInput.id && <DropdownPlaces searchingFor={searchingFor}/>}
+            {openForInput === currentInput.id &&
+                <DropdownPlaces searchingFor={searchingFor}/>}
         </div>
 
         <RemoveTransferLocation currentInput={currentInput}/>
