@@ -37,6 +37,8 @@ export default function DropdownInputComponent({index, totalLength, currentInput
         'stop': MultipleStopSVG,
         'destination': DestionationSVG
     }
+
+    /* this piece of code is important, because input loses focus when the dropdown opens */
     useEffect(() => {
         if (openForInput === currentInput.id && inputRef.current) {
             inputRef.current.focus();
