@@ -100,10 +100,7 @@
                 font-weight: inherit;
             }
             & button:focus{
-                outline: transparent;
-                -moz-box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy); /*FF 3.5+*/
-                -webkit-box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy); /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-                box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy); /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+               border: 1px solid var(--color-main-deep-sea-navy-light);
             }
             & button:hover{
                 background-color: var(--color-main-deep-sea-navy-light);
