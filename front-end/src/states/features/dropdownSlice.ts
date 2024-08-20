@@ -59,7 +59,7 @@ export const dropdownSlice = createSlice({
                       value: action.payload.id === i.id ? undefined : i.value
                   }
               })],
-              selectedLocations: [...state.selectedLocations.filter(location => location === action.payload.location)]
+              selectedLocations: [...state.selectedLocations.filter(location => location !== action.payload.location)]
 
           }
         },
@@ -74,6 +74,7 @@ export const dropdownSlice = createSlice({
         removeDropdownInput: (state, action:{payload: DropdownInput}) => {
             return {
                 ...state,
+                selectedLocations: [...state.selectedLocations.filter(location => location !== action.payload.value)],
                 dropdownInputs: [...state.dropdownInputs.filter((i) => i.id !== action.payload.id)]
             }
         },
