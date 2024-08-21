@@ -20,7 +20,8 @@ export default function DropdownInput({inputRef, currentInput, searchingFor, set
                        outline: '1px solid var(--color-main-deep-sea-navy)',
                        border: openForInput.alert ? '1px solid red': "initial"
                    } : {}}
-                   onClick={() => dispatch(setOpenForInput({id: currentInput.id}))}
+                   onClick={() => dispatch(setOpenForInput({id: currentInput.id, alert: openForInput.id
+                        === currentInput.id && Boolean(openForInput?.alert)}))}
                    onChange={(e) => {
                        setSearchingFor(e.target.value)
                    }}
