@@ -11,7 +11,6 @@ export default function useClickOutside(inputID: string, handler: () => void) {
                 {
                     handler()
                 }
-
             }
         }
 
