@@ -2,6 +2,7 @@ import {setOpenForInput} from "../../../../../states/features/dropdownSlice.ts";
 import {useAppDispatch, useAppSelector} from "../../../../../states/hooks.ts";
 import React from "react";
 import {TDropdownInput} from "../../../../../types/transfers/dropdown.ts";
+import dropdownStyles from '../../styles/dropdown.module.css'
 
 export default function DropdownInput({inputRef, currentInput, searchingFor, setSearchingFor}: {
     inputRef: React.RefObject<HTMLInputElement>,
@@ -17,9 +18,9 @@ export default function DropdownInput({inputRef, currentInput, searchingFor, set
                    style={openForInput?.id === currentInput.id ? {
                        borderBottomLeftRadius: '0',
                        borderBottomRightRadius: '0',
-                       outline: '1px solid var(--color-main-deep-sea-navy)',
-                       border: openForInput.alert ? '1px solid red': "initial"
+                       outline: `1px solid ${openForInput.alert ? 'var(--color-main-navy-red)' : 'var(--color-main-deep-sea-navy)'}`
                    } : {}}
+                   className={`${dropdownStyles['dropdownInput']} ${openForInput?.alert && dropdownStyles['dropdownInputAlert']}`}
                    onClick={() => dispatch(setOpenForInput({id: currentInput.id, alert: openForInput.id
                         === currentInput.id && Boolean(openForInput?.alert)}))}
                    onChange={(e) => {
