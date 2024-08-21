@@ -5,7 +5,6 @@ import {Link, useLocation} from "react-router-dom";
 export default function Header() {
     const URLS = ['/tours', '/transfers', '/contact', '/about']
     const loc = useLocation()
-    console.log(loc)
 
     return <header className={headerStyles['homepageHeader']}>
         <Link to={'/'}
