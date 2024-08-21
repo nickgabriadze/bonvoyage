@@ -8,19 +8,19 @@ import {addDropdownInput} from "../../../../states/features/dropdownSlice.ts";
 export default function Dropdown() {
     const dropdownDispatch = useAppDispatch()
     const {dropdownInputs} = useAppSelector(s => s.dropdown)
-    return <section >
+    return <section className={dropdownStyles['dropdownWrapper']}>
         <div className={dropdownStyles['transfersContainer']}>
-        {dropdownInputs.map((input, i) => <DropdownInputComponent key={v4()} currentInput={input} index={i}
-                                                                  totalLength={dropdownInputs.length}/>)}
+            {dropdownInputs.map((input, i) => <DropdownInputComponent key={v4()} currentInput={input} index={i}
+                                                                      totalLength={dropdownInputs.length}/>)}
 
-        <button className={dropdownStyles['addDestination']}
-                onClick={() => !checkIfEmpty(dropdownInputs) && dropdownDispatch(addDropdownInput({
-                    id: v4(),
-                    value: undefined
-                }))}>
-            Add
-            Destination
-        </button>
+            <button className={dropdownStyles['addDestination']}
+                    onClick={() => !checkIfEmpty(dropdownInputs) && dropdownDispatch(addDropdownInput({
+                        id: v4(),
+                        value: undefined
+                    }))}>
+                Add
+                Destination
+            </button>
         </div>
     </section>
 }
