@@ -9,11 +9,6 @@
     border-radius: 8px;
     gap: 10px;
     width: 100%
-
-    /* to test */
-
-    /* to test */
-
 }
 
 .transferInput {
@@ -48,22 +43,24 @@
 
         & .removeInput:hover {
 
-            -moz-box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy-lighter); /*FF 3.5+*/
-            -webkit-box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy-lighter); /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-            box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy-lighter); /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+            -moz-box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy-lighter);
+            -webkit-box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy-lighter);
+            box-shadow: 0 0 6px 1px var(--color-main-deep-sea-navy-lighter);
         }
 
         & input {
             padding: 16px;
-            font-size: var(--font-size-m);
             border-radius: inherit;
             border: none;
             transition: all 300ms linear;
             width: 100%;
+            font-size: clamp(var(--font-size-s), 2.4vw, var(--font-size-m));
+
         }
 
         & input::placeholder {
             color: var(--color-main-deep-sea-navy);
+            font-size: clamp(var(--font-size-s), 2.4vw, var(--font-size-m));
         }
 
 
