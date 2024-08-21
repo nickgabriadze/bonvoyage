@@ -1,5 +1,5 @@
 import dropdownStyles from "../../styles/dropdown.module.css";
-import {DropdownInput} from "../../../../../types/transfers/dropdown.ts";
+import {TDropdownInput} from "../../../../../types/transfers/dropdown.ts";
 import DropdownPlaces from "./DropdownPlaces.tsx";
 import {useAppDispatch, useAppSelector} from "../../../../../states/hooks.ts";
 import {
@@ -10,11 +10,13 @@ import RemoveTransferInput from "./RemoveTransferInput.tsx";
 import RemoveTransferLocation from "./RemoveTransferLocation.tsx";
 import TransferTypeIndicator from "./TransferTypeIndicator.tsx";
 import useClickOutside from "../utils/useClickOutside.ts";
+import DropdownInput from './DropdownInput.tsx'
+
 
 export default function DropdownInputComponent({index, totalLength, currentInput}: {
     index: number,
     totalLength: number,
-    currentInput: DropdownInput,
+    currentInput: TDropdownInput,
 }) {
 
 
@@ -26,7 +28,7 @@ export default function DropdownInputComponent({index, totalLength, currentInput
     const isLast = totalLength - 1 === index
 
 
-    const clickOutsideRef = useClickOutside(currentInput.id, () =>  dispatch(setOpenForInput(undefined)))
+    const clickOutsideRef = useClickOutside(currentInput.id, () => dispatch(setOpenForInput(undefined)))
 
     /* this piece of code is important, because input loses focus when the dropdown opens */
     useEffect(() => {
@@ -34,7 +36,6 @@ export default function DropdownInputComponent({index, totalLength, currentInput
             inputRef.current.focus();
         }
     }, [openForInput]);
-
 
 
     return <div key={currentInput.id} className={dropdownStyles['transferInput']}
@@ -45,19 +46,10 @@ export default function DropdownInputComponent({index, totalLength, currentInput
         <TransferTypeIndicator index={index} isLast={isLast}/>
         <div
 
-                            className={dropdownStyles['inputWrapper']}>
-            <input value={openForInput === currentInput.id ? searchingFor : currentInput.value}
-                   ref={inputRef}
-                   style={openForInput === currentInput.id ? {
-                       borderBottomLeftRadius: '0',
-                       borderBottomRightRadius: '0',
-                       outline: '1px solid var(--color-main-deep-sea-navy)'
-                   } : {}}
-                   onClick={() => dispatch(setOpenForInput(currentInput.id))}
-                   onChange={(e) => {
-                       setSearchingFor(e.target.value)
-                   }}
-                   placeholder={currentInput.start ? 'Where do you want to start from?' : 'Where do you want to go?'}/>
+            className={dropdownStyles['inputWrapper']}>
+            <DropdownInput inputRef={inputRef} currentInput={currentInput} searchingFor={searchingFor}
+                           setSearchingFor={setSearchingFor}/>
+
             {openForInput === currentInput.id &&
                 <DropdownPlaces searchingFor={searchingFor}/>}
         </div>
