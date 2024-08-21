@@ -1,0 +1,36 @@
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2.5rem;
+
+
+    & .eachInfoSource{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        & h2 {
+            font-weight: bold;
+            color: var(--color-main-deep-sea-navy);
+            font-size: clamp(var(--font-size-m), 2.5vw, var(--font-size-l));
+        }
+
+        & .eachInfoTitle {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+
+            & h4 {
+                font-weight: bold;
+                font-size: clamp(var(--font-size-m), 1.8vw, var(--font-size-l));
+                font-family: 'Dancing Script', sans-serif;
+
+                color: var(--color-main-deep-sea-navy-light);
+            }
+        }
+
+    }
+
+}

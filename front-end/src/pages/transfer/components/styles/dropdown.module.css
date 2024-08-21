@@ -67,9 +67,9 @@
 
         & input:focus {
             outline: transparent;
-            -moz-box-shadow: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /*FF 3.5+*/
-            -webkit-box-shadow: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-            box-shadow: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+            -moz-box-shadow: var(--shadow-moz-box);
+            -webkit-box-shadow: var(--shadow-webkit-box);
+            box-shadow: var(--shadow-box);
         }
 
 
