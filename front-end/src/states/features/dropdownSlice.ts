@@ -3,13 +3,13 @@ import {TDropdownInput} from "../../types/transfers/dropdown.ts";
 import {v4} from "uuid";
 
 interface DropdownState {
-    openForInput: string | undefined,
+    openForInput: { id: string | undefined, alert?: boolean },
     selectedLocations: { transferInputId: string | undefined, locationValue: string }[],
     dropdownInputs: TDropdownInput[]
 }
 
 const initialState: DropdownState = {
-    openForInput: undefined,
+    openForInput: {id: undefined},
     selectedLocations: [],
     dropdownInputs: [{
         id: v4(),
@@ -29,10 +29,17 @@ export const dropdownSlice = createSlice({
     name: "dropdown",
     initialState,
     reducers: {
-        setOpenForInput: (state, action) => {
-            return {
-                ...state,
-                openForInput: action.payload,
+        setOpenForInput: (state, action:{payload: {id: string | undefined, alert?:boolean}}) => {
+            if(action.payload.alert) {
+                return {
+                    ...state,
+                    openForInput: {id: action.payload.id, alert: action.payload.alert},
+                }
+            }else{
+                return {
+                    ...state,
+                    openForInput: {id: action.payload.id}
+                }
             }
         },
         setSelectedLocations: (state, action: { payload: { location: string } }) => {
@@ -42,14 +49,14 @@ export const dropdownSlice = createSlice({
                 dropdownInputs: [...state.dropdownInputs.map(i => {
                     return {
                         ...i,
-                        value: state.openForInput === i.id ? action.payload.location : i.value
+                        value: state.openForInput.id === i.id ? action.payload.location : i.value
                     }
                 })],
                 selectedLocations: [...state.selectedLocations, {
-                    transferInputId: state.openForInput,
+                    transferInputId: state.openForInput?.id,
                     locationValue: action.payload.location,
                 }],
-                openForInput: undefined,
+                openForInput: {id: undefined},
 
             }
         },

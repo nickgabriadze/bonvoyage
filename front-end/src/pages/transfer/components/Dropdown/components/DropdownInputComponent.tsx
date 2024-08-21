@@ -28,14 +28,14 @@ export default function DropdownInputComponent({index, totalLength, currentInput
     const isLast = totalLength - 1 === index
 
 
-    const clickOutsideRef = useClickOutside(currentInput.id, () => dispatch(setOpenForInput(undefined)))
+    const clickOutsideRef = useClickOutside(currentInput.id, () => dispatch(setOpenForInput({id: undefined})))
 
     /* this piece of code is important, because input loses focus when the dropdown opens */
     useEffect(() => {
-        if (openForInput === currentInput.id && inputRef.current) {
+        if (openForInput.id === currentInput.id && inputRef.current) {
             inputRef.current.focus();
         }
-    }, [openForInput]);
+    }, [openForInput.id]);
 
 
     return <div key={currentInput.id} className={dropdownStyles['transferInput']}
@@ -50,7 +50,7 @@ export default function DropdownInputComponent({index, totalLength, currentInput
             <DropdownInput inputRef={inputRef} currentInput={currentInput} searchingFor={searchingFor}
                            setSearchingFor={setSearchingFor}/>
 
-            {openForInput === currentInput.id &&
+            {openForInput?.id === currentInput.id &&
                 <DropdownPlaces searchingFor={searchingFor}/>}
         </div>
 

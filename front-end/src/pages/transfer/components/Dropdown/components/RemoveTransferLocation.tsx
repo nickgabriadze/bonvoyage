@@ -7,7 +7,8 @@ import {TDropdownInput} from "../../../../../types/transfers/dropdown.ts";
 export default function RemoveTransferLocation({currentInput}: { currentInput: TDropdownInput }) {
     const dispatch = useAppDispatch()
     const {openForInput} = useAppSelector(s => s.dropdown)
-    return currentInput.value && openForInput === currentInput.id && <button
+
+    return currentInput.value && openForInput.id === currentInput.id && <button
         onClick={() => dispatch(removeSelectedLocation({
             id: currentInput.id,
             location: String(currentInput.value)
