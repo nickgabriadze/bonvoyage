@@ -1,4 +1,4 @@
-export type DropdownInput = {
+export type TDropdownInput = {
     id: string,
     value: undefined | string,
     start?: boolean,
