@@ -13,10 +13,15 @@
 }
 
 .websiteName {
-    font-family: var(--font-dancing-script), sans-serif;
-    color: var(--color-main-deep-sea-navy);
-    font-size: calc(var(--font-size-l) + 4px);
-    transition: text-shadow 300ms linear;
+    text-decoration: none;
+
+    & h1 {
+        font-family: var(--font-dancing-script), sans-serif;
+        color: var(--color-main-deep-sea-navy);
+        font-size: calc(var(--font-size-l) + 4px);
+        transition: all 300ms linear;
+    }
+
 }
 
 
@@ -31,7 +36,7 @@
     font-family: var(--font-quicksand), sans-serif;
 
     & a {
-        color: var(--color-main-deep-sea-navy);
+        color: var(--color-main-deep-sea-navy-light-5);
         font-size: var(--font-size-m);
         font-weight: bold;
         text-decoration: none;
@@ -46,9 +51,10 @@
         width: 100%;
         transform: scaleX(0);
         height: 2px;
-        background-color: black;
+        background-color: var(--color-main-deep-sea-navy);
         bottom: -3px;
         transform-origin: top left;
+        border-radius: 8px;
         transition: transform 0.3s ease-out;
     }
 
