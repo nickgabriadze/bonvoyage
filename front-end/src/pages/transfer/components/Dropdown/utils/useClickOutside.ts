@@ -7,10 +7,11 @@ export default function useClickOutside(inputID: string, handler: () => void) {
 
     useEffect(() => {
         const handleClickOutside = (event: any) => {
-            if (openForInput === inputID && !ref.current?.contains(event.target)) {
+            if (openForInput === inputID && event.target.localName !== 'input' && !ref.current?.contains(event.target)) {
                 {
                     handler()
                 }
+
             }
         }
 
