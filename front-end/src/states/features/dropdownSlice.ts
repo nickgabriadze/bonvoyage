@@ -1,11 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {DropdownInput} from "../../types/transfers/dropdown.ts";
+import {TDropdownInput} from "../../types/transfers/dropdown.ts";
 import {v4} from "uuid";
 
 interface DropdownState {
     openForInput: string | undefined,
     selectedLocations: { transferInputId: string | undefined, locationValue: string }[],
-    dropdownInputs: DropdownInput[]
+    dropdownInputs: TDropdownInput[]
 }
 
 const initialState: DropdownState = {
@@ -68,14 +68,14 @@ export const dropdownSlice = createSlice({
           }
         },
 
-        addDropdownInput: (state, action:{payload: DropdownInput}) => {
+        addDropdownInput: (state, action:{payload: TDropdownInput}) => {
             return {
                 ...state,
                 dropdownInputs: [...state.dropdownInputs, action.payload]
             }
         },
 
-        removeDropdownInput: (state, action:{payload: DropdownInput}) => {
+        removeDropdownInput: (state, action:{payload: TDropdownInput}) => {
             return {
                 ...state,
                 selectedLocations: [...state.selectedLocations.filter(location => location.locationValue !== action.payload.value)],

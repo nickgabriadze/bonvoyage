@@ -2,9 +2,9 @@ import {removeSelectedLocation} from "../../../../../states/features/dropdownSli
 import dropdownStyles from "../../styles/dropdown.module.css";
 import ClearInputSVG from "../../../../../assets/icons/remove.svg";
 import {useAppDispatch, useAppSelector} from "../../../../../states/hooks.ts";
-import {DropdownInput} from "../../../../../types/transfers/dropdown.ts";
+import {TDropdownInput} from "../../../../../types/transfers/dropdown.ts";
 
-export default function RemoveTransferLocation({currentInput}: { currentInput: DropdownInput }) {
+export default function RemoveTransferLocation({currentInput}: { currentInput: TDropdownInput }) {
     const dispatch = useAppDispatch()
     const {openForInput} = useAppSelector(s => s.dropdown)
     return currentInput.value && openForInput === currentInput.id && <button

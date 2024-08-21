@@ -2,12 +2,12 @@ import {removeDropdownInput} from "../../../../../states/features/dropdownSlice.
 import dropdownStyles from "../../styles/dropdown.module.css";
 import CloseSVG from "../../../../../assets/icons/close.svg";
 import {useAppDispatch} from "../../../../../states/hooks.ts";
-import {DropdownInput} from "../../../../../types/transfers/dropdown.ts";
+import {TDropdownInput} from "../../../../../types/transfers/dropdown.ts";
 
 export default function RemoveTransferInput({isLast, totalLength, currentInput}: {
     isLast: boolean,
     totalLength: number,
-    currentInput: DropdownInput
+    currentInput: TDropdownInput
 }) {
     const dispatch = useAppDispatch()
 
