@@ -7,7 +7,9 @@ export default function ContactLayout({children}: { children: ReactNode }) {
         gap: '60px',
         alignItems: "center",
         justifyContent: 'space-around',
-        padding: '50px 10px 0 10px'
+        padding: '10px 10px 10px 10px',
+        borderRadius: '8px',
+
     }
     return <section
         style={layoutStyle}>{children}</section>
