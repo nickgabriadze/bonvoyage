@@ -1,47 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap');
 
 
-:root{
-  /* colors */
-  --color-main-black: #000000;
-  --color-main-deep-sea-navy: #002F4E;
-  --color-main-navy-sort-of-black: #002033;
-  --color-main-deep-sea-navy-light: rgba(0, 47, 78, 0.8);
-  --color-main-deep-sea-navy-lighter: rgba(0, 47, 78, 0.1);
-  --color-main-deep-sea-navy-light-5: rgba(0, 47, 78, 0.5);
-  --color-main-navy-red: #840201;
-  --color-main-black-light: rgba(0, 0, 0, 0.1);
+:root {
+    /* colors */
+    --color-main-black: #000000;
+    --color-main-deep-sea-navy: #002F4E;
+    --color-main-navy-sort-of-black: #002033;
+    --color-main-deep-sea-navy-light: rgba(0, 47, 78, 0.8);
+    --color-main-deep-sea-navy-lighter: rgba(0, 47, 78, 0.1);
+    --color-main-deep-sea-navy-light-5: rgba(0, 47, 78, 0.5);
+    --color-main-navy-red: #840201;
+    --color-main-black-light: rgba(0, 0, 0, 0.1);
 
-  /* font sizes */
-  --font-size-xs: 4px;
-  --font-size-s: 8px;
-  --font-size-m: 16px;
-  --font-size-l: 32px;
-  --font-size-xl: 64px;
+    /* font sizes */
+    --font-size-xs: 4px;
+    --font-size-s: 8px;
+    --font-size-m: 16px;
+    --font-size-l: 32px;
+    --font-size-xl: 64px;
 
-  /* font families */
-  --font-dancing-script: 'Dancing Script';
-  --font-quicksand: 'Quicksand';
+    /* font families */
+    --font-dancing-script: 'Dancing Script';
+    --font-quicksand: 'Quicksand';
 
 
-  /* shadows */
-  --shadow-moz-box: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /*FF 3.5+*/
-  --shadow-webkit-box: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-  --shadow-box: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    /* shadows */
+    --shadow-moz-box: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /*FF 3.5+*/
+    --shadow-webkit-box: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    --shadow-box: 0 0 6px 3px var(--color-main-deep-sea-navy-lighter); /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-  scroll-behavior: smooth;
+html {
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6,
 p, span, button {
-  font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
+button {
+    border: none;
+    background-color: inherit;
+}
+
+a {
+    text-decoration: none;
+}
