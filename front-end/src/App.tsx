@@ -1,18 +1,21 @@
 import Home from "./pages/home/Home.tsx";
 import {Route, Routes} from "react-router-dom";
-import Header from "./pages/home/components/Header/Header.tsx";
 import Transfers from "./pages/transfer/Transfers.tsx";
 import Contact from "./pages/contact/Contact.tsx";
+import Login from "./pages/authentication/login/Login.tsx";
 
 export function App() {
 
 
     return <>
-        <Header/>
         <Routes>
-            <Route path={'/'} element={<Home/>}/>
-            <Route path={'/contact'} element={<Contact/>}/>
-            <Route path={'/transfers'} element={<Transfers/>}/>
+            <Route path={'/'} element={<Home/>}>
+                <Route path={'contact'} element={<Contact/>}/>
+                <Route path={'transfers'} element={<Transfers/>}/>
+            </Route>
+
+            <Route path={'/login'} element={<Login />}/>
+
         </Routes></>
 
 }
