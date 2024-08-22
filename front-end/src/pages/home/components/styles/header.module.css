@@ -9,7 +9,7 @@
     -moz-box-shadow: var(--shadow-moz-box);
     -webkit-box-shadow: var(--shadow-webkit-box);
     box-shadow: var(--shadow-box);
-
+    position: relative;
 }
 
 .websiteName {
@@ -62,3 +62,32 @@
         transform: scaleX(1);
     }
 }
+
+.userLogin{
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+    & button{
+        cursor: pointer;
+        border: none;
+        color: var(--color-main-deep-sea-navy);
+        transition: all 200ms linear;
+    }
+}
+
+.userLogin:hover{
+
+    & button{
+        font-weight: bold;
+
+    }
+}
+
+
