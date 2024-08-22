@@ -72,7 +72,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
+    gap: 10px;
 
     & button{
         cursor: pointer;
@@ -80,14 +80,16 @@
         color: var(--color-main-deep-sea-navy);
         transition: all 200ms linear;
     }
-}
 
-.userLogin:hover{
-
-    & button{
-        font-weight: bold;
-
+    .authButtons{
+        display: flex;
+        gap: 3px;
     }
+
+        & button:hover{
+            font-weight: bold;
+        }
 }
+
 
 
