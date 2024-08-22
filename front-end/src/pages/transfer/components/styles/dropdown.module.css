@@ -97,11 +97,9 @@
             & button {
                 color: var(--color-main-deep-sea-navy);
                 padding: 12px;
-                border: none;
                 width: 100%;
                 cursor: pointer;
                 text-align: left;
-                background-color: inherit;
                 font-family: inherit;
                 font-weight: inherit;
             }
@@ -124,7 +122,6 @@
     width: 100%;
     padding: 20px;
     background-color: var(--color-main-deep-sea-navy);
-    border: none;
     outline: transparent;
     color: white;
     border-radius: inherit;
@@ -139,7 +136,7 @@
     gap: 4px;
 }
 
-.addDestination button:hover {
+.addDestination:hover {
     background-color: rgba(0, 47, 78, 0.8);
 }
 
