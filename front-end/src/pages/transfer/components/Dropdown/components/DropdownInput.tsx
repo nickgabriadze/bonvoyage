@@ -21,12 +21,14 @@ export default function DropdownInput({inputRef, currentInput, searchingFor, set
                        outline: `1px solid ${openForInput.alert ? 'var(--color-main-navy-red)' : 'var(--color-main-deep-sea-navy)'}`
                    } : {}}
                    className={`${dropdownStyles['dropdownInput']} ${openForInput?.alert && dropdownStyles['dropdownInputAlert']}`}
-                   onClick={() => dispatch(setOpenForInput({id: currentInput.id, alert: openForInput.id
-                        === currentInput.id && Boolean(openForInput?.alert)}))}
+                   onClick={() => dispatch(setOpenForInput({
+                       id: currentInput.id, alert: openForInput.id
+                           === currentInput.id && Boolean(openForInput?.alert)
+                   }))}
                    onChange={(e) => {
                        setSearchingFor(e.target.value)
                    }}
-                   placeholder={openForInput.alert? 'Please choose a location' : currentInput.start ? 'Where do you want to start from?' : 'Where do you want to go?'}/>)
+                   placeholder={openForInput.alert ? 'Please choose a location' : currentInput.start ? 'Where do you want to start from?' : 'Where do you want to go?'}/>)
 
 }
 

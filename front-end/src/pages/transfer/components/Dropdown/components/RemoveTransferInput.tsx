@@ -1,6 +1,6 @@
 import {removeDropdownInput} from "../../../../../states/features/dropdownSlice.ts";
 import dropdownStyles from "../../styles/dropdown.module.css";
-import CloseSVG from "../../../../../assets/icons/close.svg";
+import CloseSVG from "../../../../../assets/icons/dropdown/close.svg";
 import {useAppDispatch} from "../../../../../states/hooks.ts";
 import {TDropdownInput} from "../../../../../types/transfers/dropdown.ts";
 

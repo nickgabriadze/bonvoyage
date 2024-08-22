@@ -4,7 +4,7 @@ import checkIfEmpty from "./utils/checkIfEmpty.ts";
 import DropdownInputComponent from "./components/DropdownInputComponent.tsx";
 import {useAppDispatch, useAppSelector} from "../../../../states/hooks.ts";
 import {addDropdownInput, setOpenForInput} from "../../../../states/features/dropdownSlice.ts";
-import AddLocationSVG from '../../../../assets/icons/add-location.svg'
+import AddLocationSVG from '../../../../assets/icons/dropdown/add-location.svg'
 
 
 export default function Dropdown() {
