@@ -12,6 +12,8 @@ export function App() {
             <Route path={'/'} element={<Home/>}>
                 <Route path={'contact'} element={<Contact/>}/>
                 <Route path={'transfers'} element={<Transfers/>}/>
+                <Route path={'tours'} element={<h1>Tours</h1>} />
+                <Route path={'about'} element={<h1>about</h1>} />
             </Route>
 
             <Route path={'/login'} element={<Authentication />}/>
