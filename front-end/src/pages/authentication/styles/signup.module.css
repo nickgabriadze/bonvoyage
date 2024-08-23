@@ -1,0 +1,93 @@
+.signupFormWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+    .signupInfo {
+        height: fit-content;
+        background-color: var(--color-main-deep-sea-navy-lighter);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 8px;
+
+
+        & h3 {
+            text-align: center;
+            color: var(--color-main-deep-sea-navy);
+        }
+    }
+
+    & .userInfo {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+    }
+
+
+    & .inputWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .passwordsContainer > div {
+            border-radius: 4px;
+        }
+
+
+        & .inputRow {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+            justify-content: space-between;
+
+
+            .emailInputWrapper, .phoneInputWrapper {
+                display: flex;
+                border: 1px solid var(--color-main-deep-sea-navy-lighter);
+                padding: 8px;
+                border-radius: 4px;
+
+
+            }
+
+            .nameInputWrapper {
+                display: flex;
+                gap: 10px;
+
+            }
+
+            .nameInputWrapper > div, .lastNameInputWrapper {
+                width: 100%;
+                border-radius: 4px;
+                padding: 8px;
+
+                border: 1px solid var(--color-main-deep-sea-navy-lighter)
+
+            }
+        }
+
+        & .passwordsContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            & div {
+                display: flex;
+                padding: 8px;
+                border: 1px solid var(--color-main-deep-sea-navy-lighter);
+            }
+        }
+    }
+
+
+    .focusedOnInput {
+
+        outline: 1px solid var(--color-main-deep-sea-navy);
+    }
+
+}
