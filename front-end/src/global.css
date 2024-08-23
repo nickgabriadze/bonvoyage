@@ -41,7 +41,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6,
-p, span, button {
+p, span, button, a{
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -52,4 +52,18 @@ button {
 
 a {
     text-decoration: none;
+}
+
+
+.go-back-home{
+    color: var(--color-main-deep-sea-navy-light);
+    transition: all 300ms linear;
+    border-bottom: 1px solid var(--color-main-deep-sea-navy);
+}
+.go-back-home:hover{
+    color: var(--color-main-deep-sea-navy);
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-main-deep-sea-navy);
+
+
 }
