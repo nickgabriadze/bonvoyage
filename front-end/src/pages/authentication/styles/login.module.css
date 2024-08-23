@@ -41,7 +41,8 @@
                 border: none;
                 padding: 10px;
                 outline: transparent;
-                background-color: inherit;;
+                color: var(--color-main-deep-sea-navy);
+                background-color: inherit;
             }
         }
 
