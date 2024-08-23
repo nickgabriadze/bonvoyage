@@ -1,5 +1,6 @@
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import {useEffect} from "react";
+import AuthLayout from "./AuthLayout.tsx";
 
 export default function Authentication() {
     const loc = useLocation();
@@ -12,5 +13,7 @@ export default function Authentication() {
     }, [nav, loc.pathname])
 
 
-    return <Outlet/>
+    return <AuthLayout>
+        <Outlet/>
+    </AuthLayout>
 }
