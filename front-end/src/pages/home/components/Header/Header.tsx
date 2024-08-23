@@ -26,9 +26,9 @@ export default function Header() {
         >
             <img src={hoverOverLogin ? UserFilledSVG : UserSVG} width={24} alt={'User icon'}/>
             <div className={headerStyles['authButtons']}>
-                <Link to={'/login'}><button>LOGIN</button></Link>
+                <Link to={'/auth/login'}><button>LOGIN</button></Link>
                 <span>/</span>
-                <Link to={'/signup'}><button>SIGNUP</button></Link>
+                <Link to={'/auth/signup'}><button>SIGNUP</button></Link>
             </div>
         </div>
     </header>
