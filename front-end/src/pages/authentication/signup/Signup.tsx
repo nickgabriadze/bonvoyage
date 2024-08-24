@@ -1,5 +1,6 @@
 import signupStyles from '../styles/signup.module.css'
-import SignatureSVG from './../../../assets/icons/authentication/signature.svg'
+import SignatureBadgeSVG from './../../../assets/icons/authentication/signature-badge.svg'
+import SignatureBadgeFilledSVG from './../../../assets/icons/authentication/signature-badge-filled.svg'
 import EmailSVG from './../../../assets/icons/authentication/email.svg'
 import EmailFilledSVG from './../../../assets/icons/authentication/email-filled.svg'
 import CallSVG from './../../../assets/icons/authentication/call.svg'
@@ -20,7 +21,8 @@ export default function Signup() {
                 <div className={signupStyles['userInfo']}>
                     <div className={signupStyles['inputRow']}>
                         <div className={signupStyles['nameInputWrapper']}>
-                            <img src={SignatureSVG} width={24} alt={'Signature icon'}/>
+                            <img src={focusedOn === 'name' ? SignatureBadgeFilledSVG : SignatureBadgeSVG} width={24}
+                                 alt={'Signature icon'}/>
                             <div
                                 className={`${signupStyles['nameInput']} ${focusedOn === 'name' && signupStyles['focusedOnInput']}`}
                             >
@@ -57,7 +59,8 @@ export default function Signup() {
                         <div className={`${signupStyles['phoneInputWrapper']}
                              ${focusedOn === 'call' && signupStyles['focusedOnInput']}`}
                         >
-                            <img src={focusedOn === 'call' ? CallFilledSVG : CallSVG} width={24} alt={'Phone call icon'}/>
+                            <img src={focusedOn === 'call' ? CallFilledSVG : CallSVG} width={24}
+                                 alt={'Phone call icon'}/>
                             <input
 
                                 onFocus={() => setFocusedOn('call')}
@@ -69,7 +72,8 @@ export default function Signup() {
                 </div>
                 <div className={signupStyles['passwordsContainer']}>
                     <div className={`${focusedOn === 'passcode' && signupStyles['focusedOnInput']}`}>
-                        <img src={focusedOn === 'passcode' ? PasscodeFilledSVG : PasscodeSVG} width={24} alt={'PasscodeSVG icon'}/>
+                        <img src={focusedOn === 'passcode' ? PasscodeFilledSVG : PasscodeSVG} width={24}
+                             alt={'PasscodeSVG icon'}/>
                         <input
                             onFocus={() => setFocusedOn('passcode')}
                             onBlur={() => setFocusedOn('none')}
@@ -77,7 +81,8 @@ export default function Signup() {
 
                     <div className={`${focusedOn === 'passcode' && signupStyles['focusedOnInput']}`}>
 
-                        <img src={focusedOn === 'passcode' ? PasscodeFilledSVG : PasscodeSVG} width={24} alt={'PasscodeSVG icon'}/>
+                        <img src={focusedOn === 'passcode' ? PasscodeFilledSVG : PasscodeSVG} width={24}
+                             alt={'PasscodeSVG icon'}/>
 
                         <input
                             onFocus={() => setFocusedOn('passcode')}
