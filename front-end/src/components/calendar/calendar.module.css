@@ -1,17 +1,12 @@
 .calendarWrapper {
     background-color: var(--color-main-deep-sea-navy-lighter);
-    width: fit-content;
     display: flex;
     align-items: center;
     flex-direction: column;
     border-radius: 8px;
     gap: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: fit-content;
-
+    width: 100%;
+    height: 100%;
 }
 
 .monthYearWrapper {
