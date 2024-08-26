@@ -54,6 +54,9 @@
             border-radius: inherit;
             border: none;
             transition: all 300ms linear;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            color: var(--color-main-deep-sea-navy);
             width: 100%;
             font-size: clamp(var(--font-size-s), 2.4vw, var(--font-size-m));
 
