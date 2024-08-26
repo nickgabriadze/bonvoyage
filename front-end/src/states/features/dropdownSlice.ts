@@ -5,7 +5,13 @@ import {v4} from "uuid";
 interface DropdownState {
     openForInput: { id: string | undefined, alert?: boolean },
     selectedLocations: { transferInputId: string | undefined, locationValue: string }[],
-    dropdownInputs: TDropdownInput[]
+    dropdownInputs: TDropdownInput[],
+    scheduled: {
+        year: string,
+        month: string,
+        day: string,
+        time?: string
+    } | undefined
 }
 
 const initialState: DropdownState = {
@@ -21,7 +27,8 @@ const initialState: DropdownState = {
             value: undefined,
             end: true
         }
-    ]
+    ],
+    scheduled: undefined
 
 }
 
@@ -29,13 +36,13 @@ export const dropdownSlice = createSlice({
     name: "dropdown",
     initialState,
     reducers: {
-        setOpenForInput: (state, action:{payload: {id: string | undefined, alert?:boolean}}) => {
-            if(action.payload.alert) {
+        setOpenForInput: (state, action: { payload: { id: string | undefined, alert?: boolean } }) => {
+            if (action.payload.alert) {
                 return {
                     ...state,
                     openForInput: {id: action.payload.id, alert: action.payload.alert},
                 }
-            }else{
+            } else {
                 return {
                     ...state,
                     openForInput: {id: action.payload.id}
@@ -61,28 +68,28 @@ export const dropdownSlice = createSlice({
             }
         },
 
-        removeSelectedLocation:(state, action:{payload: {id: string, location: string}}) => {
-          return {
-              ...state,
-              dropdownInputs: [...state.dropdownInputs.map(i => {
-                  return {
-                      ...i,
-                      value: action.payload.id === i.id ? undefined : i.value
-                  }
-              })],
-              selectedLocations: [...state.selectedLocations.filter(location => location.locationValue !== action.payload.location)]
+        removeSelectedLocation: (state, action: { payload: { id: string, location: string } }) => {
+            return {
+                ...state,
+                dropdownInputs: [...state.dropdownInputs.map(i => {
+                    return {
+                        ...i,
+                        value: action.payload.id === i.id ? undefined : i.value
+                    }
+                })],
+                selectedLocations: [...state.selectedLocations.filter(location => location.locationValue !== action.payload.location)]
 
-          }
+            }
         },
 
-        addDropdownInput: (state, action:{payload: TDropdownInput}) => {
+        addDropdownInput: (state, action: { payload: TDropdownInput }) => {
             return {
                 ...state,
                 dropdownInputs: [...state.dropdownInputs, action.payload]
             }
         },
 
-        removeDropdownInput: (state, action:{payload: TDropdownInput}) => {
+        removeDropdownInput: (state, action: { payload: TDropdownInput }) => {
             return {
                 ...state,
                 selectedLocations: [...state.selectedLocations.filter(location => location.locationValue !== action.payload.value)],
@@ -90,10 +97,25 @@ export const dropdownSlice = createSlice({
             }
         },
 
+        setScheduled: (state, action: { payload: {year:string, month: string, day: string} | undefined }) => {
+            return{
+                ...state,
+                scheduled: action.payload ? {
+                    ...state.scheduled,
+                    year: action.payload.year,
+                    month: action.payload.month,
+                    day: action.payload.day,
+                } : undefined,
 
+            }
+        }
     }
 })
 
 
-export const {setOpenForInput,removeSelectedLocation, setSelectedLocations, addDropdownInput, removeDropdownInput} = dropdownSlice.actions;
+export const {
+    setOpenForInput
+    , removeSelectedLocation, setSelectedLocations, addDropdownInput
+    , removeDropdownInput, setScheduled
+} = dropdownSlice.actions;
 export default dropdownSlice.reducer
