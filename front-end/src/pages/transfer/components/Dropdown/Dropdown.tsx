@@ -5,6 +5,7 @@ import DropdownInputComponent from "./components/DropdownInputComponent.tsx";
 import {useAppDispatch, useAppSelector} from "../../../../states/hooks.ts";
 import {addDropdownInput, setOpenForInput} from "../../../../states/features/dropdownSlice.ts";
 import AddLocationSVG from '../../../../assets/icons/dropdown/add-location.svg'
+import DropdownCalendar from "./components/DropdownCalendar.tsx";
 
 
 export default function Dropdown() {
@@ -34,6 +35,8 @@ export default function Dropdown() {
                 Destination</span>
             </button>
         </div>
+
+        <DropdownCalendar />
 
 
     </section>
