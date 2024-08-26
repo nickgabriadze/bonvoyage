@@ -35,7 +35,7 @@ export default function DropdownInputComponent({index, totalLength, currentInput
         if (openForInput.id === currentInput.id && inputRef.current) {
             inputRef.current.focus();
         }
-    }, [openForInput.id]);
+    }, [currentInput.id, openForInput.id]);
 
 
     return <div key={currentInput.id} className={dropdownStyles['transferInput']}
