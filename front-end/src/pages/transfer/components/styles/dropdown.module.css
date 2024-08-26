@@ -143,6 +143,10 @@
     background-color: rgba(0, 47, 78, 0.8);
 }
 
+.addDestination:focus{
+    background-color: rgba(0, 47, 78, 0.8);
+}
+
 /* Styling the scrollbar */
 .placesDropdown::-webkit-scrollbar {
     width: 2px;

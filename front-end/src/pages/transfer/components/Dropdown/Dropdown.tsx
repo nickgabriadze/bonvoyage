@@ -27,7 +27,6 @@ export default function Dropdown() {
                             dropdownDispatch(setOpenForInput({id: empty, alert: true}))
                         }
 
-
                     }}>
                 <img src={AddLocationSVG} width={24} alt={'Additional Location icon'}/>
                 <span> Add
