@@ -15,6 +15,7 @@ export default function DropdownInput({inputRef, currentInput, searchingFor, set
 
     return (<input value={openForInput?.id === currentInput.id ? searchingFor : currentInput.value}
                    ref={inputRef}
+
                    style={openForInput?.id === currentInput.id ? {
                        borderBottomLeftRadius: '0',
                        borderBottomRightRadius: '0',
@@ -26,7 +27,11 @@ export default function DropdownInput({inputRef, currentInput, searchingFor, set
                            === currentInput.id && Boolean(openForInput?.alert)
                    }))}
                    onChange={(e) => {
+                       if(!openForInput.id){
+                           dispatch(setOpenForInput({id:currentInput.id}))
+                       }
                        setSearchingFor(e.target.value)
+
                    }}
                    placeholder={openForInput.alert ? 'Please choose a location' : currentInput.start ? 'Where do you want to start from?' : 'Where do you want to go?'}/>)
 
