@@ -1,9 +1,11 @@
-.calendarWrapper{
+.calendarWrapper {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 
     position: relative;
-    .datePicker{
+
+    .datePicker {
         display: flex;
         cursor: pointer;
         border-radius: 12px;
@@ -15,14 +17,22 @@
         color: var(--color-main-deep-sea-navy);
     }
 
-    .datePicker:focus{
+    .datePicker:focus {
         outline: 2px solid var(--color-main-deep-sea-navy);
     }
 
 
-    .calendar{
+    .calendar {
         position: relative;
         z-index: 999;
+        width: 40%;
+    }
+}
 
+@media only screen and (max-width: 800px) {
+    .calendarWrapper {
+        .calendar {
+            width: 65%;
+        }
     }
 }
