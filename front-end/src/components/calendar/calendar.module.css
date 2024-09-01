@@ -5,8 +5,9 @@
     flex-direction: column;
     border-radius: 8px;
     gap: 10px;
-    width: 100%;
+    min-width: 50%;
     height: 100%;
+
 }
 
 .monthYearWrapper {
@@ -19,7 +20,7 @@
         display: flex;
         height: fit-content;
         gap: 10px;
-
+        align-items: center;
 
         & button {
             background-color: var(--color-main-deep-sea-navy-lighter);
@@ -59,8 +60,8 @@
     & div {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 10px;
         place-items: center;
+
         width: 100%;
         padding: 10px;
         background-color: var(--color-main-deep-sea-navy-lighter);
@@ -76,19 +77,20 @@
     place-items: center;
     width: 100%;
     grid-template-columns: repeat(7, 1fr);
+    row-gap: 10px;
     transition: all 300ms linear;
     padding: 0 5px 10px 5px;
     font-weight: bold;
 
     & .dayNumber, .passedDay{
         transition: all 200ms linear;
-        padding: 15px;
         border-radius: 10px;
 
     }
 
     & .dayNumber:hover {
         background-color: var(--color-main-deep-sea-navy-lighter);
+        padding: 10px;
     }
 
     & .passedDay {
@@ -100,7 +102,7 @@
     .specifiedDay{
         background-color: var(--color-main-deep-sea-navy);
         color: white;
-        padding: 15px;
+        padding: 10px;
         border-radius: 10px;
     }
 
