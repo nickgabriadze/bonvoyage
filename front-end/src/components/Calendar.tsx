@@ -58,14 +58,14 @@ export default function Calendar() {
                     day < presentDay ? <span
                             key={`passed-day${i}`}
                             className={calendarStyles['passedDay']}>{day}</span> :
-                        <span
+                        <button
                             onClick={() => dispatch(setScheduled(scheduled === undefined || !specifiedDay ? {
                                 year: String(presentYear),
                                 month: months[date.getMonth()],
                                 day: String(day)
                             } : undefined))}
                             key={`available-day${i}`}
-                            className={`${specifiedDay ? calendarStyles['specifiedDay'] : calendarStyles['dayNumber']} `}>{day}</span>
+                            className={`${specifiedDay ? calendarStyles['specifiedDay'] : calendarStyles['dayNumber']} `}>{day}</button>
             })
         }</div>
 

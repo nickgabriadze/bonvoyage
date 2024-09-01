@@ -88,9 +88,10 @@
 
     }
 
-    & .dayNumber:hover {
+    & .dayNumber:hover, .dayNumber:focus {
         background-color: var(--color-main-deep-sea-navy-lighter);
         padding: 10px;
+        outline: transparent;
     }
 
     & .passedDay {
