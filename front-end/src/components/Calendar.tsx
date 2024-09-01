@@ -15,7 +15,6 @@ export default function Calendar() {
     const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay()
     const presentDay = presentMonth === months[new Date().getMonth()].slice(0, 3) ? new Date().getDate() : date.getDate()
 
-
     const {scheduled} = useAppSelector(s => s.dropdown)
     const dispatch = useAppDispatch()
 
@@ -32,8 +31,8 @@ export default function Calendar() {
                     }}
                 ><img width={30} src={LeftArrowSVG} alt={'Left arrow icon'}/></button>
                 <div className={calendarStyles['monthYear']}>
-                    <h2>{presentYear}</h2>
-                    <h3>{presentMonth}.</h3>
+                    <h3>{presentYear}</h3>
+                    <h4>{presentMonth}.</h4>
                 </div>
                 <button
                     onClick={() => {
@@ -45,13 +44,13 @@ export default function Calendar() {
         </div>
 
         <div className={calendarStyles['weekDays']}>
-            <div>{days.map((d, i) => <h4 key={i}>{d.slice(0, 3)}</h4>)}</div>
+            <div>{days.map((d, i) => <h5 key={i}>{d.slice(0, 3)}</h5>)}</div>
 
         </div>
 
 
         <div className={calendarStyles['days']}>{
-            Array.from({length: nDaysInMonth}).map((_, i) => {
+            Array.from({length: nDaysInMonth + firstDay}).map((_, i) => {
                 const day = i - firstDay + 1
 
                 const specifiedDay = scheduled && presentMonth === scheduled.month.slice(0,3) && String(day) === scheduled.day && String(presentYear) === scheduled.year

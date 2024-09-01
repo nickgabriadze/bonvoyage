@@ -33,7 +33,8 @@ export default function DropdownInput({inputRef, currentInput, searchingFor, set
                        setSearchingFor(e.target.value)
 
                    }}
-                   placeholder={openForInput.alert ? 'Please choose a location' : currentInput.start ? 'Where do you want to start from?' : 'Where do you want to go?'}/>)
+                   placeholder={openForInput.alert ? 'Please choose a location' : currentInput.start ? 'Where do you want to start from?' : 'Where do you want to go?'}
+    />)
 
 }
 
