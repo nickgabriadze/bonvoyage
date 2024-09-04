@@ -1,4 +1,4 @@
-import Home from "./pages/home/Home.tsx";
+import HomeWrapper from "./pages/home/HomeWrapper.tsx";
 import {Route, Routes} from "react-router-dom";
 import Transfers from "./pages/transfer/Transfers.tsx";
 import Contact from "./pages/contact/Contact.tsx";
@@ -6,6 +6,7 @@ import Authentication from "./pages/authentication/Authentication.tsx";
 import Login from "./pages/authentication/login/Login.tsx";
 import Signup from "./pages/authentication/signup/Signup.tsx";
 import NotFound from "./404.tsx";
+import {Home} from "./pages/home/components/Home/Home.tsx";
 
 export function App() {
 
@@ -14,7 +15,8 @@ export function App() {
         <Routes>
 
 
-            <Route path={'/'} element={<Home/>}>
+            <Route path={'/'} element={<HomeWrapper/>}>
+                <Route index element={<Home />}/>
                 <Route path={'contact'} element={<Contact/>}/>
                 <Route path={'transfers'} element={<Transfers/>}/>
                 <Route path={'tours'} element={<h1>Tours</h1>}/>
