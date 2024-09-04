@@ -7,7 +7,7 @@ export default function useClickOutside(inputID: string, handler: () => void) {
 
     useEffect(() => {
         const handleClickOutside = (event: any) => {
-            if (openForInput?.id === inputID && event.target.localName !== 'input' && !ref.current?.contains(event.target)) {
+            if (openForInput?.id === inputID && event.target?.localName !== 'input' && !ref.current?.contains(event.target)) {
                 {
                     handler()
                 }
@@ -21,7 +21,7 @@ export default function useClickOutside(inputID: string, handler: () => void) {
             document.removeEventListener('mousedown', handleClickOutside)
         }
 
-    }, [ref.current])
+    }, [handler, inputID, openForInput?.id])
 
     return ref
 }

@@ -1,9 +1,10 @@
 import Calendar from "../../../../../components/Calendar.tsx";
 import dropdownCalendarStyles from './../../styles/dropdown.calendar.module.css'
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import CalendarSVG from './../../../../../assets/icons/calendar/calendar.svg'
 import CalendarFilledSVG from './../../../../../assets/icons/calendar/calendar-filled.svg'
 import {useAppSelector} from "../../../../../states/hooks.ts";
+import {useCalendarClickOutside} from "../../../../../components/calendar/useCalendarClickOutside.tsx";
 
 
 export default function DropdownCalendar() {
@@ -15,13 +16,18 @@ export default function DropdownCalendar() {
         }
     }, [openForInput.id])
 
+    const buttonRef = useRef<HTMLButtonElement>(null)
+    const click = useCalendarClickOutside(buttonRef, () => setOpen(false))
+    return <section className={dropdownCalendarStyles['calendarWrapper']}
 
-    return <section className={dropdownCalendarStyles['calendarWrapper']}>
-        <button onClick={() => setOpen((prev) => !prev)} className={dropdownCalendarStyles['datePicker']}>
+    >
+        <button
+            ref={buttonRef}
+            onClick={() => setOpen((prev) => !prev)} className={dropdownCalendarStyles['datePicker']}>
             <img src={open ? CalendarSVG : CalendarFilledSVG} alt={'Calendar icon'}/>
             <h4>{scheduled !== undefined ? `${scheduled.day}/${scheduled.month}/${scheduled.year}`:'Choose date'}</h4>
         </button>
-        {open && <div className={dropdownCalendarStyles['calendar']}><Calendar/></div>}
+        {open && <div  ref={click} className={dropdownCalendarStyles['calendar']}><Calendar/></div>}
     </section>
 
 }
