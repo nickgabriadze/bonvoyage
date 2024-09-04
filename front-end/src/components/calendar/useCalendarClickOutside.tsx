@@ -4,7 +4,6 @@ export function useCalendarClickOutside(btn: RefObject<HTMLButtonElement>, handl
     const ref = useRef<HTMLDivElement>(null);
     useEffect(() => {
         const handleOutsideClick = (event:any) => {
-            console.log(btn.current, event.target)
             if(!btn.current?.contains(event.target) && !ref.current?.contains(event.target)){
                 handler()
             }
