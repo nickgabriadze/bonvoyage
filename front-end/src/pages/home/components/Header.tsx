@@ -1,13 +1,10 @@
-import headerStyles from '../styles/header.module.css'
+import headerStyles from './styles/header.module.css'
 import {Link, useLocation} from "react-router-dom";
-import UserSVG from '../../../../assets/icons/header/user.svg'
-import UserFilledSVG from '../../../../assets/icons/header/user-filled.svg'
-import {useState} from "react";
+
 
 export default function Header() {
     const URLS = ['/tours', '/transfers', '/contact', '/about']
     const loc = useLocation()
-    const [hoverOverLogin, setHoverOverLogin] = useState<boolean>(false)
 
     return <header className={headerStyles['homepageHeader']}>
         <Link to={'/'}
@@ -21,13 +18,10 @@ export default function Header() {
         </nav>
 
         <div className={headerStyles['userLogin']}
-              onMouseOver={() => setHoverOverLogin(true)}
-              onMouseOut={() => setHoverOverLogin(false)}
         >
-            <img src={hoverOverLogin ? UserFilledSVG : UserSVG} width={24} alt={'User icon'}/>
             <div className={headerStyles['authButtons']}>
                 <Link to={'/auth/login'}>LOGIN</Link>
-                <span>/</span>
+                <hr/>
                 <Link to={'/auth/signup'}>SIGNUP</Link>
             </div>
         </div>
