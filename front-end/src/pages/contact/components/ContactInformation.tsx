@@ -1,7 +1,7 @@
 import contactInfoStyle from './../styles/contact.info.module.css'
-import AddressSVG from '../../../../public/icons/contact/pin-drop.svg'
-import CallSVG from '../../../../public/icons/contact/call.svg'
-import EmailSVG from '../../../../public/icons/contact/email.svg'
+import AddressSVG from '/icons/contact/pin-drop.svg'
+import CallSVG from '/icons/contact/call.svg'
+import EmailSVG from '/icons/contact/email.svg'
 
 export default function ContactInformation() {
 
