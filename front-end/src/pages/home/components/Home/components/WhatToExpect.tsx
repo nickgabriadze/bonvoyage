@@ -1,12 +1,12 @@
 import expectStyles from './../../styles/home.module.css'
-import PaymentSVG from './../../../../../assets/icons/homepage/payment.svg'
-import CarSVG from './../../../../../assets/icons/homepage/car.svg'
-import CommunicationSVG from './../../../../../assets/icons/homepage/communication.svg'
-import WaterDropSVG from './../../../../../assets/icons/homepage/water-drop.svg'
-import CameraSVG from './../../../../../assets/icons/homepage/camera.svg'
-import FreeCancellationSVG from './../../../../../assets/icons/homepage/free-cancellation.svg'
-import CustomerSupportSVG from './../../../../../assets/icons/homepage/support.svg'
-import BookmarkHeartSVG from './../../../../../assets/icons/homepage/bookmark-heart.svg'
+import PaymentSVG from '/icons/homepage/payment.svg'
+import CarSVG from '/icons/homepage/car.svg'
+import CommunicationSVG from '/icons/homepage/communication.svg'
+import WaterDropSVG from '/icons/homepage/water-drop.svg'
+import CameraSVG from '/icons/homepage/camera.svg'
+import FreeCancellationSVG from '/icons/homepage/free-cancellation.svg'
+import CustomerSupportSVG from '/icons/homepage/support.svg'
+import BookmarkHeartSVG from '/icons/homepage/bookmark-heart.svg'
 
 
 export function WhatToExpect() {

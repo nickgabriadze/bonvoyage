@@ -1,12 +1,12 @@
 import signupStyles from '../styles/signup.module.css'
-import SignatureBadgeSVG from './../../../assets/icons/authentication/signature-badge.svg'
-import SignatureBadgeFilledSVG from './../../../assets/icons/authentication/signature-badge-filled.svg'
-import EmailSVG from './../../../assets/icons/authentication/email.svg'
-import EmailFilledSVG from './../../../assets/icons/authentication/email-filled.svg'
-import CallSVG from './../../../assets/icons/authentication/call.svg'
-import CallFilledSVG from './../../../assets/icons/authentication/call-filled.svg'
-import PasscodeSVG from './../../../assets/icons/authentication/passcode.svg'
-import PasscodeFilledSVG from './../../../assets/icons/authentication/passcode-filled.svg'
+import SignatureBadgeSVG from '/icons/authentication/signature-badge.svg'
+import SignatureBadgeFilledSVG from '/icons/authentication/signature-badge-filled.svg'
+import EmailSVG from '/icons/authentication/email.svg'
+import EmailFilledSVG from '/icons/authentication/email-filled.svg'
+import CallSVG from '/icons/authentication/call.svg'
+import CallFilledSVG from '/icons/authentication/call-filled.svg'
+import PasscodeSVG from '/icons/authentication/passcode.svg'
+import PasscodeFilledSVG from '/icons/authentication/passcode-filled.svg'
 import {useState} from "react";
 
 export default function Signup() {

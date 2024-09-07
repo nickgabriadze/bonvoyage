@@ -1,8 +1,8 @@
 import Calendar from "../../../../../components/Calendar.tsx";
 import dropdownCalendarStyles from './../../styles/dropdown.calendar.module.css'
 import {useEffect, useRef, useState} from "react";
-import CalendarSVG from './../../../../../assets/icons/calendar/calendar.svg'
-import CalendarFilledSVG from './../../../../../assets/icons/calendar/calendar-filled.svg'
+import CalendarSVG from '/icons/calendar/calendar.svg'
+import CalendarFilledSVG from '/icons/calendar/calendar-filled.svg'
 import {useAppSelector} from "../../../../../states/hooks.ts";
 import {useCalendarClickOutside} from "../../../../../components/calendar/useCalendarClickOutside.tsx";
 

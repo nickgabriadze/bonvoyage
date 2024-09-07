@@ -1,8 +1,8 @@
 import loginStyles from './../styles/login.module.css'
-import EmailSVG from '../../../assets/icons/authentication/email.svg'
-import EmailFilledSVG from '../../../assets/icons/authentication/email-filled.svg'
-import PasswordLockSVG from '../../../assets/icons/authentication/password-lock.svg'
-import PasswordLockFilledSVG from '../../../assets/icons/authentication/password-lock-filled.svg'
+import EmailSVG from '/icons/authentication/email.svg'
+import EmailFilledSVG from '/icons/authentication/email-filled.svg'
+import PasswordLockSVG from '/icons/authentication/password-lock.svg'
+import PasswordLockFilledSVG from '/icons/authentication/password-lock-filled.svg'
 import {useState} from "react";
 
 

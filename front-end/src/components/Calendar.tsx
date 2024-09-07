@@ -1,6 +1,6 @@
 import calendarStyles from './calendar/calendar.module.css'
-import LeftArrowSVG from './../assets/icons/calendar/arrow-left.svg'
-import RightArrowSVG from './../assets/icons/calendar/arrow-right.svg'
+import LeftArrowSVG from '/icons/calendar/arrow-left.svg'
+import RightArrowSVG from '/icons/calendar/arrow-right.svg'
 import {useState} from "react";
 import {useAppDispatch, useAppSelector} from "../states/hooks.ts";
 import {setScheduled} from "../states/features/dropdownSlice.ts";

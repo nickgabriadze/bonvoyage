@@ -1,6 +1,6 @@
 import {removeSelectedLocation} from "../../../../../states/features/dropdownSlice.ts";
 import dropdownStyles from "../../styles/dropdown.module.css";
-import ClearInputSVG from "../../../../../assets/icons/dropdown/remove.svg";
+import ClearInputSVG from "/icons/dropdown/remove.svg";
 import {useAppDispatch, useAppSelector} from "../../../../../states/hooks.ts";
 import {TDropdownInput} from "../../../../../types/transfers/dropdown.ts";
 
