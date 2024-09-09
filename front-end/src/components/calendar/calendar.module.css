@@ -83,6 +83,7 @@
 
     & button {
         font-weight: bold;
+        color: var(--color-main-deep-sea-navy);
         cursor: pointer;
     }
 
@@ -96,6 +97,7 @@
         background-color: var(--color-main-deep-sea-navy-lighter);
         padding: 10px;
         outline: transparent;
+        outline: none;
     }
 
     & .passedDay {
