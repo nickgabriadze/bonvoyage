@@ -49,6 +49,12 @@ button {
     border: none;
     background-color: inherit;
 }
+body{
+    height: 100dvh;
+}
+body.preventScroll {
+    overflow:hidden;
+}
 
 a {
     text-decoration: none;
@@ -64,6 +70,4 @@ a {
     color: var(--color-main-deep-sea-navy);
     font-weight: bold;
     border-bottom: 2px solid var(--color-main-deep-sea-navy);
-
-
 }
