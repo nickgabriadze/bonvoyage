@@ -1,5 +1,6 @@
 import headerStyles from './styles/header.module.css'
 import {Link, useLocation} from "react-router-dom";
+import HamburgerMenu from "./Home/components/HamburgerMenu.tsx";
 
 
 export default function Header() {
@@ -25,6 +26,9 @@ export default function Header() {
                 <Link to={'/auth/signup'}>SIGNUP</Link>
             </div>
         </div>
+
+
+        <HamburgerMenu navigation={URLS}/>
     </header>
 }
 
