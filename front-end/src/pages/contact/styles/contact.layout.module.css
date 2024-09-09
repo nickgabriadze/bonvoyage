@@ -1,0 +1,15 @@
+.layoutWrapper{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+
+@media only screen and (max-width: 500px){
+    .layoutWrapper{
+        flex-direction: column;
+    }
+}
